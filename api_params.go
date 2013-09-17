@@ -130,6 +130,3 @@ type APICopy struct {
 	HostPath string
 }
 
-type APILoad struct {
-	Image string `json:"Image"`
-}

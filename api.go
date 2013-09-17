@@ -499,14 +499,14 @@ func postImagesPush(srv *Server, version float64, w http.ResponseWriter, r *http
 
 func getImagesGet(srv *Server, version float64, w http.ResponseWriter, r *http.Request, vars map[string]string) error {
 	name := vars["name"]
-  log.Println("Hello")
+	log.Println("Hello")
 	srv.ImageExport(name, w)
 	return nil
 }
 
 func postImagesLoad(srv *Server, version float64, w http.ResponseWriter, r *http.Request, vars map[string]string) error {
-  srv.ImageLoad(r.Body, w)
-  return nil
+	srv.ImageLoad(r.Body, w)
+	return nil
 }
 
 func postContainersCreate(srv *Server, version float64, w http.ResponseWriter, r *http.Request, vars map[string]string) error {

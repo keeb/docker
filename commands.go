@@ -1615,7 +1615,7 @@ func (cli *DockerCli) CmdCp(args ...string) error {
 }
 
 func (cli *DockerCli) CmdSave(args ...string) error {
-	cmd := Subcmd("save","IMAGE DESTINATION", "Save an image to a tar archive")
+	cmd := Subcmd("save", "IMAGE DESTINATION", "Save an image to a tar archive")
 	if err := cmd.Parse(args); err != nil {
 		return nil
 	}
@@ -1634,10 +1634,10 @@ func (cli *DockerCli) CmdSave(args ...string) error {
 }
 
 func (cli *DockerCli) CmdLoad(args ...string) error {
-	cmd := Subcmd("load","SOURCE", "Load an image from a tar archive")
-//	if err := cmd.Parse(args); err != nil {
-//		return nil
-//	}
+	cmd := Subcmd("load", "SOURCE", "Load an image from a tar archive")
+	//	if err := cmd.Parse(args); err != nil {
+	//		return nil
+	//	}
 
 	//image := cmd.Arg(0)
 	//fileName := cmd.Arg(1)
@@ -1647,9 +1647,9 @@ func (cli *DockerCli) CmdLoad(args ...string) error {
 		return nil
 	}
 	err := cli.stream("POST", "/images/load", cli.in, cli.out, nil)
-  if err != nil {
-    fmt.Println("Send failed", err)
-  }
+	if err != nil {
+		fmt.Println("Send failed", err)
+	}
 	//data, statusCode, err := cli.call("POST", "/images/"+image+"/load", nil)
 	//fmt.Println(data, statusCode, err)
 	return nil
